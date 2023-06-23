@@ -5,7 +5,7 @@ export default function Home() {
   //     document.body.classList.add("bg-desktop");
   //   });
   return (
-    <body className="home">
+    <div className="home">
       <Navbar />
       <div className="main-container">
         <div className="home-main">
@@ -28,6 +28,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
