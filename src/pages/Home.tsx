@@ -5,7 +5,12 @@ export default function Home() {
   //     document.body.classList.add("bg-desktop");
   //   });
   return (
-    <div className="home">
+    <div
+      className="home"
+      style={{
+        backgroundImage: "url('./assets/home/background-home-desktop.jpg')",
+      }}
+    >
       <Navbar />
       <div className="main-container">
         <div className="home-main">
