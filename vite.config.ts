@@ -13,5 +13,5 @@ export default defineConfig({
       },
     },
   },
-  base: "/space-tourism-vite-ts"
+  // base: "/space-tourism-vite-ts"
 })
