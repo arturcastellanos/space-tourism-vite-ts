@@ -15,25 +15,28 @@ import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/destination",
-    element: <Destination />,
-  },
-  {
-    path: "/crew",
-    element: <Crew />,
-  },
-  {
-    path: "/technology",
-    element: <Technology />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Home />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/destination",
+      element: <Destination />,
+    },
+    {
+      path: "/crew",
+      element: <Crew />,
+    },
+    {
+      path: "/technology",
+      element: <Technology />,
+    },
+  ],
+  { basename: import.meta.env.DEV ? "/" : "/space-tourism-vite-ts/" }
+);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
