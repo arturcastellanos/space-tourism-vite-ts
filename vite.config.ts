@@ -4,14 +4,23 @@ import sass from 'sass';
 
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  css: {
-    preprocessorOptions: {
-      sass: {
-        implementation: sass,
+
+export default defineConfig(({ command }) => {
+  const config = {
+    plugins: [react()],
+    base: '/',
+    css: {
+      preprocessorOptions: {
+        sass: {
+          implementation: sass,
+        },
       },
     },
-  },
-  // base: "/space-tourism-vite-ts/"
+  }
+
+  if (command !== 'serve') {
+    config.base = '/space-tourism-vite-ts/'
+  }
+
+  return config
 })
