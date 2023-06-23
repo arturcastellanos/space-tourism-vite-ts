@@ -1,0 +1,113 @@
+@use "../abstracts/colors" as colors;
+@use "../abstracts/fonts" as fonts;
+
+$navbar-padding: 50px 0 0 0;
+$line-width: 350px;
+$line-color: rgba(255, 255, 255, 0.12);
+$links-width: 500px;
+$links-height: 70px;
+$links-margin-right: 15%;
+
+@mixin backdrop-filter($blur-radius) {
+  background-color: rgba(9, 9, 9, 0.25);
+  backdrop-filter: blur($blur-radius);
+  -webkit-backdrop-filter: blur($blur-radius);
+}
+
+.navbar {
+  padding: $navbar-padding;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+
+  .line {
+    content: "";
+    width: $line-width;
+    height: 1px;
+    background-color: $line-color;
+    margin-left: 45px;
+  }
+
+  .links {
+    display: flex;
+    width: $links-width;
+    height: $links-height;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: $links-margin-right;
+  }
+
+  .links::after {
+    content: "";
+    @include backdrop-filter(21.5px);
+    height: 90px;
+    width: 800px;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+  }
+
+  a.logo {
+    margin-left: 5%;
+    // height: 100%;
+  }
+
+  ol {
+    counter-reset: questionNumber;
+
+    li {
+      color: colors.$color-purple;
+      list-style-type: none;
+      text-transform: uppercase;
+      font-family: fonts.$font-barlow;
+      font-weight: 200;
+      margin: 0 12px;
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      counter-increment: questionNumber;
+
+      a {
+        text-decoration: none;
+
+        &:visited {
+          color: colors.$color-purple;
+        }
+        &.active {
+          color: colors.$color-light;
+          // position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -11px;
+            width: 120%;
+            height: 2px;
+            background-color: colors.$color-light;
+          }
+        }
+
+        &:before {
+          content: counter(questionNumber, decimal-leading-zero) " ";
+          font-weight: bold;
+          padding-right: 8px;
+        }
+
+        &:not(.active):hover::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -11px;
+          width: 120%;
+          height: 2px;
+          background-color: colors.$color-light;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

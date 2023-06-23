@@ -1,0 +1,82 @@
+@use "../abstracts/fonts" as fonts;
+@import "../abstracts/colors";
+
+.two-column {
+  display: flex;
+  justify-content: space-evenly;
+  height: 60vh;
+  .left-col {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 400px;
+      overflow: auto;
+    }
+  }
+
+  .right-col {
+    width: 30%;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
+      color: $color-purple;
+      list-style-type: none;
+      margin-bottom: 45px;
+
+      a {
+        text-transform: uppercase;
+        font-family: fonts.$font-barlow;
+        font-weight: 100;
+        text-decoration: none;
+        position: relative;
+      }
+
+      a:visited {
+        color: $color-purple;
+      }
+      a.isActive {
+        color: $color-light;
+        font-weight: 400;
+      }
+      a.isActive::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -11px;
+        width: 100%;
+        height: 2px;
+        background-color: $color-light;
+      }
+      a:not(.isActive):hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -11px;
+        width: 100%;
+        height: 2px;
+        background-color: $color-light;
+        opacity: 0.5;
+      }
+    }
+    h2 {
+      text-transform: uppercase;
+    }
+    p.description {
+      font-family: fonts.$font-barlow;
+      color: $color-purple;
+      font-weight: 100;
+    }
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      column-gap: 100px;
+      h4 {
+        text-transform: uppercase;
+        font-size: 26px;
+      }
+    }
+  }
+}

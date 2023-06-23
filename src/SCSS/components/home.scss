@@ -1,0 +1,51 @@
+@use "../abstracts/colors" as colors;
+
+.home {
+  background-image: url("./assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  // height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  //   min-width: 900px;
+  //   box-sizing: border-box;
+  .home-main {
+    width: 75%;
+    min-height: 550px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    .left-col {
+      width: 43%;
+      h1 {
+        margin: 20px 0;
+      }
+    }
+    .right-col {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .btn-main {
+        text-decoration: none;
+        color: colors.$color-dark;
+        width: 184px;
+        height: 184px;
+        background-color: colors.$color-light;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: box-shadow 0.2s ease;
+        margin-bottom: 50px;
+      }
+
+      .btn-main:hover {
+        box-shadow: 0 0 0 50px rgba(9, 9, 9, 0.7);
+      }
+    }
+  }
+}

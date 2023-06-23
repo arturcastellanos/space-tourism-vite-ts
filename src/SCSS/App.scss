@@ -1,0 +1,91 @@
+@use "./abstracts/fonts" as fonts;
+@use "./components/navbar";
+@use "./components/PlanetCard.scss";
+@use "./components/home";
+@use "./components/destination";
+
+@import "./abstracts/colors";
+
+body {
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-color: grey;
+  font-family: fonts.$font-bellefair;
+  color: $color-light;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 150px;
+}
+
+h2 {
+  font-size: 100px;
+}
+
+h3 {
+  font-size: 56px;
+}
+
+h4 {
+  font-size: 32px;
+}
+
+h5 {
+  font-size: 28px;
+  letter-spacing: 4.75px;
+  font-weight: 400;
+  font-family: fonts.$font-barlow;
+  padding: 0;
+  margin: 0;
+}
+
+.subheading,
+.subheading2 {
+  font-weight: 400;
+}
+
+.subheading {
+  font-size: 28px;
+}
+
+.subheading2 {
+  font-size: 14px;
+  font-family: fonts.$font-barlow;
+  letter-spacing: 2.35px;
+}
+
+.nav-text {
+  font-family: fonts.$font-barlow;
+  font-size: 16px;
+  letter-spacing: 2.7px;
+  font-weight: 400;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 32px;
+  font-family: fonts.$font-barlow;
+  color: $color-purple;
+}
+
+#error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
